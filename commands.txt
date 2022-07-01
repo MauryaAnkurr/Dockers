@@ -1,0 +1,31 @@
+Create Docker file:
+
+
+Create requirements.txt
+
+
+create some python file to test
+
+
+Example of Docker file
+****************************///////////////////////////////******************************
+FROM python:alpine3.8
+COPY . /app
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD python ./main.py
+****************************///////////////////////////////******************************
+
+
+GO to location where docker file kept .
+
+Step:1
+docker build -t testimage .
+
+
+Step:2
+docker run --name testcontainer -p 5000:5000 testimage
